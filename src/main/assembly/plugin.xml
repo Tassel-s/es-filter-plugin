@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<assembly>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>my-filter</outputDirectory>
+            <useProjectArtifact>true</useProjectArtifact>
+            <useTransitiveFiltering>true</useTransitiveFiltering>
+        </dependencySet>
+    </dependencySets>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.basedir}/config</directory>
+            <outputDirectory>config</outputDirectory>
+        </fileSet>
+    </fileSets>
+    <files>
+        <file>
+            <fileMode>0755</fileMode>
+            <filtered>true</filtered>
+            <outputDirectory>my-filter/</outputDirectory>
+            <source>${project.basedir}/src/main/resources/plugin-descriptor.properties</source>
+        </file>
+        <!--<file>
+            <fileMode>0755</fileMode>
+            <filtered>true</filtered>
+            <outputDirectory>hanlp-analyzer/</outputDirectory>
+            <source>${project.basedir}/src/main/resources/hanlp-hot-update.cfg.xml</source>
+        </file>-->
+        <file>
+            <fileMode>0755</fileMode>
+            <filtered>true</filtered>
+            <outputDirectory>my-filter/</outputDirectory>
+            <source>${project.basedir}/src/main/resources/plugin-security.policy</source>
+        </file>
+    </files>
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <id>plugin-develop</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+</assembly>
